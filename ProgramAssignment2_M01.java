@@ -37,7 +37,23 @@ public class ProgramAssignment2_M01 {
 
     /** Return true if the card number is valid */
 
+import java.util.Scanner;
+
 public class ProgramAssignment2_M01 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a credit card number as a long integer: ");
+        long number = scanner.nextLong();
+
+        if (isValid(number)) {
+            System.out.println(number + " is valid");
+        } else {
+            System.out.println(number + " is invalid");
+        }
+    }
+
+    /** Return true if the card number is valid */
     public static boolean isValid(long number) {
         return (getSize(number) >= 13 && getSize(number) <= 16) &&
                (prefixMatched(number, 4) || prefixMatched(number, 5) || 
